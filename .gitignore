@@ -1,0 +1,7 @@
+﻿__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+crash_config.json
+crash_icon.ico
