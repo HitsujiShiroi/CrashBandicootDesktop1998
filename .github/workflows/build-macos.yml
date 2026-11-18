@@ -45,16 +45,18 @@ jobs:
             main.py
 
       - name: Package macOS Release ZIP
-     run: |
-       mkdir -p dist_package/characters
-       cp -R "dist/CrashBandicootDesktop1998.app" dist_package/
-       if [ -d "characters" ] && [ "$(ls -A characters)" ]; then
-         cp -R characters/* dist_package/characters/
-       fi
-       [ -f "README.md" ] && cp README.md dist_package/
-       [ -f "LICENSE" ] && cp LICENSE dist_package/
-       cd dist_package
-       zip -r -y ../CrashBandicootDesktop1998-macOS-v1.0.0.zip .
+        run: |
+          mkdir -p dist_package/characters
+          cp -R "dist/CrashBandicootDesktop1998.app" dist_package/
+          if [ -d "characters" ] && [ "$(ls -A characters)" ]; then
+            cp -R characters/* dist_package/characters/
+          fi
+          [ -f "README.md" ] && cp README.md dist_package/
+          [ -f "readme.md" ] && cp readme.md dist_package/README.md
+          [ -f "LICENSE" ] && cp LICENSE dist_package/
+          [ -f "licence.txt" ] && cp licence.txt dist_package/LICENSE
+          cd dist_package
+          zip -r -y ../CrashBandicootDesktop1998-macOS-v1.0.0.zip .
 
       - name: Upload macOS Artifact
         uses: actions/upload-artifact@v4
