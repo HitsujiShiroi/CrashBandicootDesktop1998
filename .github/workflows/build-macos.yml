@@ -1,0 +1,63 @@
+name: Build macOS App
+
+on:
+  push:
+    branches: [ "macos" ]
+  workflow_dispatch:
+
+jobs:
+  build-mac:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Convert sprite to macOS .icns icon
+        run: |
+          mkdir -p icon.iconset
+          sips -z 16 16     assets/sprites/frame_000.png --out icon.iconset/icon_16x16.png
+          sips -z 32 32     assets/sprites/frame_000.png --out icon.iconset/icon_16x16@2x.png
+          sips -z 32 32     assets/sprites/frame_000.png --out icon.iconset/icon_32x32.png
+          sips -z 64 64     assets/sprites/frame_000.png --out icon.iconset/icon_32x32@2x.png
+          sips -z 128 128   assets/sprites/frame_000.png --out icon.iconset/icon_128x128.png
+          sips -z 256 256   assets/sprites/frame_000.png --out icon.iconset/icon_128x128@2x.png
+          sips -z 256 256   assets/sprites/frame_000.png --out icon.iconset/icon_256x256.png
+          iconutil -c icns icon.iconset -o app_icon.icns
+
+      - name: Build .app with PyInstaller
+        run: |
+          pyinstaller --noconfirm --windowed \
+            --name "CrashBandicootDesktop1998" \
+            --icon "app_icon.icns" \
+            --osx-bundle-identifier "com.hitsujishiroi.crashmascot1998" \
+            --add-data "assets:assets" \
+            main.py
+
+      - name: Package macOS Release ZIP
+        run: |
+          mkdir -p dist_package/characters
+          cp -R "dist/CrashBandicootDesktop1998.app" dist_package/
+          if [ -d "characters" ] && [ "$(ls -A characters)" ]; then
+            cp -R characters/* dist_package/characters/
+          fi
+          cp README.md dist_package/
+          cp LICENSE dist_package/
+          cd dist_package
+          zip -r -y ../CrashBandicootDesktop1998-macOS-v1.0.0.zip .
+
+      - name: Upload macOS Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CrashBandicootDesktop1998-macOS-v1.0.0
+          path: CrashBandicootDesktop1998-macOS-v1.0.0.zip

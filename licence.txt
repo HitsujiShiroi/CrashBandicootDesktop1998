@@ -1,0 +1,42 @@
+MIT License
+
+Copyright (c) 2026 Hitsuji_Shiroi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+THIRD-PARTY ASSETS & INTELLECTUAL PROPERTY DISCLAIMER
+
+Engine & Source Code:
+The Python/PySide6 desktop engine, user interface, physics implementation,
+and modernization code in this repository are the original work of
+Hitsuji_Shiroi (2026) and are licensed under the MIT License above.
+
+Third-Party Trademarks & Assets:
+"Crash Bandicoot", its characters, sprites, sound effects, and musical
+compositions are registered trademarks and copyrighted property of Activision
+Publishing, Inc., Sony Interactive Entertainment Europe (SCEE), Universal
+Interactive Studios, and Naughty Dog. Original 1998 desktop character assets
+were produced by MDR Software Ltd.
+
+Non-Commercial & Preservation Purpose:
+The MIT License applies strictly to the software engine code created by
+Hitsuji_Shiroi and does not grant any rights over third-party copyrighted
+assets. Any third-party assets included or referenced are used solely for
+non-commercial, educational, fan-tribute, and software preservation purposes.
