@@ -4,6 +4,8 @@ A modern, expanded recreation in **Python + PySide6** of the official *Crash Ban
 
 **Remastered & Modernized by [@Hitsuji_Shiroi](https://github.com/HitsujiShiroi) (2026)**
 
+<img width="1408" height="1380" alt="01_Manual" src="https://github.com/user-attachments/assets/82ab21d2-4e23-49b1-8d31-a6ed4ec5913b" />
+
 ---
 
 ## Key Features
