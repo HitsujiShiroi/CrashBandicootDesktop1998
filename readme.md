@@ -1,4 +1,4 @@
-# Crash Bandicoot Desktop Character (1998) — Windows 10/11 Remastered Edition
+# Crash Bandicoot Desktop Character USA (1998) — Windows 10/11 Remastered Edition
 
 A modern, expanded recreation in **Python + PySide6** of the official *Crash Bandicoot 2: Cortex Strikes Back* desktop mascot, originally released in 1998 by MDR Software Ltd. for SCEE.
 
